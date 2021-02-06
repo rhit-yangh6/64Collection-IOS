@@ -8,4 +8,5 @@ target '64Collection' do
   # Pods for 64Collection
   pod 'LeanCloud'
   pod 'SideMenu'
+  pod 'Kingfisher', '~> 6.0'
 end

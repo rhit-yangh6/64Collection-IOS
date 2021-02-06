@@ -10,6 +10,7 @@ import Foundation
 let kClassBrand = "Brand"
 let kKeyBrandName = "Name"
 let kKeyBrandCountry = "Country"
+let kKeyBrandPhotoUrl = "PhotoUrl"
 
 let kClassType = "Type"
 let kKeyTypeName = "Name"

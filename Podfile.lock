@@ -3,6 +3,7 @@ PODS:
   - GRDB.swift (4.14.0):
     - GRDB.swift/standard (= 4.14.0)
   - GRDB.swift/standard (4.14.0)
+  - Kingfisher (6.1.0)
   - LeanCloud (17.6.8):
     - LeanCloud/RTM (= 17.6.8)
   - LeanCloud/Foundation (17.6.8):
@@ -15,6 +16,7 @@ PODS:
   - SwiftProtobuf (1.15.0)
 
 DEPENDENCIES:
+  - Kingfisher (~> 6.0)
   - LeanCloud
   - SideMenu
 
@@ -22,6 +24,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - GRDB.swift
+    - Kingfisher
     - LeanCloud
     - SideMenu
     - SwiftProtobuf
@@ -29,10 +32,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   GRDB.swift: 8cc3ab7c8b8b4ac1761deb8dca4b51c1c9d429f8
+  Kingfisher: f5d8d60a0ef3edd642fd781bae60918599901aff
   LeanCloud: 07a899eaec86c822e18775f5c0b2946813f278e4
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftProtobuf: 3320217e9d8fb75f36b40282e78c482640fd75dd
 
-PODFILE CHECKSUM: 295355516dc00da3cfcbb351b626d0b9f0c8579c
+PODFILE CHECKSUM: f4dd72216571d192b980ddf4938ca1dd49a857c2
 
 COCOAPODS: 1.10.1

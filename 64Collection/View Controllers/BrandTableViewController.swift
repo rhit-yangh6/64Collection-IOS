@@ -50,9 +50,10 @@ class BrandTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: brandCellIdentifier, for: indexPath)
-        cell.textLabel?.text = BrandsManager.shared.getBrandNameAtIndex(index: indexPath.row)
-        cell.detailTextLabel?.text = BrandsManager.shared.getBrandCountryAtIndex(index: indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: brandCellIdentifier, for: indexPath) as! BrandCell
+        cell.brandNameLabel.text = BrandsManager.shared.getBrandNameAtIndex(index: indexPath.row)
+        cell.brandCountryLabel.text = BrandsManager.shared.getBrandCountryAtIndex(index: indexPath.row)
+        ImageUtils.shared.load(imageView: cell.brandLogoImageView, from: BrandsManager.shared.getBrandPhotoUrlAtIndex(index: indexPath.row))
         return cell
     }
     
@@ -66,7 +67,7 @@ class BrandTableViewController: UITableViewController {
             BrandsManager.shared.deleteBrandWithId(id: BrandsManager.shared.getBrandIdAtIndex(index: indexPath.row), changeListener: refresh)
         }
     }
-//
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == typesSegueIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -74,4 +75,10 @@ class BrandTableViewController: UITableViewController {
             }
         }
     }
+}
+
+class BrandCell: UITableViewCell {
+    @IBOutlet weak var brandNameLabel: UILabel!
+    @IBOutlet weak var brandCountryLabel: UILabel!
+    @IBOutlet weak var brandLogoImageView: UIImageView!
 }
