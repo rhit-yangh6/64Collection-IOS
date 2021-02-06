@@ -39,11 +39,9 @@ class TypesManager {
     func getTypes(brandId: String, changeListener: (() -> Void)?) {
         let query = LCQuery(className: kClassType)
         query.whereKey(kKeyTypeBrandId, .equalTo(brandId))
+        query.whereKey(kKeyTypeName, .ascending)
         query.find { result in
             self._objects = result.objects
-            self._objects?.sort(by: { (a, b) -> Bool in
-                return a.get(kKeyTypeName)?.stringValue ?? "" <= b.get(kKeyTypeName)?.stringValue ?? ""
-            })
             changeListener?()
         }
     }

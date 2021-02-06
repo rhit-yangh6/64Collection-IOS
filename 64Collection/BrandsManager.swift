@@ -36,11 +36,9 @@ class BrandsManager {
     
     func getBrands(changeListener: (() -> Void)?) {
         let query = LCQuery(className: kClassBrand)
+        query.whereKey(kKeyBrandName, .ascending)
         query.find { result in
             self._objects = result.objects
-            self._objects?.sort(by: { (a, b) -> Bool in
-                return a.get(kKeyBrandName)?.stringValue ?? "" <= b.get(kKeyBrandName)?.stringValue ?? ""
-            })
             changeListener?()
         }
     }
