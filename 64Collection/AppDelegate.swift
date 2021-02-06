@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LeanCloud
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        do {
+            try LCApplication.default.set(
+                id: "zTlkPQ6jIWwwgRc573R4xRty-9Nh9j0Va",
+                key: "qSoQFc0lrd0HIVs3NJ90ax2j",
+                serverURL: "https://ztlkpq6j.lc-cn-e1-shared.com")
+        } catch {
+            print(error)
+        }
+        
         // Override point for customization after application launch.
         return true
     }
