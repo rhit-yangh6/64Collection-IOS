@@ -189,8 +189,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFZ-Xc-fx4">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BQf-bL-SKz">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account_box_36pt" translatesAutoresizingMaskIntoConstraints="NO" id="BQf-bL-SKz">
                                                 <rect key="frame" x="20" y="12" width="36" height="36"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="TlV-zc-TdP"/>
                                                     <constraint firstAttribute="width" constant="36" id="ZQC-ZO-HtL"/>
@@ -218,8 +219,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9A-FJ-lmG">
                                         <rect key="frame" x="0.0" y="60" width="414" height="60"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-bI-6IU">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account_box_36pt" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-bI-6IU">
                                                 <rect key="frame" x="20" y="12" width="36" height="36"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="9oX-Kn-WMf"/>
                                                     <constraint firstAttribute="width" constant="36" id="r91-nS-Zrz"/>
@@ -247,8 +250,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4T-z5-cZw">
                                         <rect key="frame" x="0.0" y="120" width="414" height="60"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LSH-UV-ZLf">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account_box_36pt" translatesAutoresizingMaskIntoConstraints="NO" id="LSH-UV-ZLf">
                                                 <rect key="frame" x="20" y="12" width="36" height="36"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="5Pk-bj-DuE"/>
                                                     <constraint firstAttribute="height" constant="36" id="egG-Bb-Wiu"/>
@@ -276,8 +280,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxv-S2-Kl5">
                                         <rect key="frame" x="0.0" y="180" width="414" height="60"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6uJ-A7-F59">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account_box_36pt" translatesAutoresizingMaskIntoConstraints="NO" id="6uJ-A7-F59">
                                                 <rect key="frame" x="20" y="12" width="36" height="36"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="Izc-Pj-dGb"/>
                                                     <constraint firstAttribute="width" constant="36" id="zNt-Ju-q1E"/>
@@ -354,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3y-UA-niG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3317" y="-648"/>
+            <point key="canvasLocation" x="3214" y="-648"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rvf-os-Dw3">
@@ -374,6 +379,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="account_box_36pt" width="36" height="36"/>
         <image name="arrow_back_ios_36pt" width="36" height="36"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
