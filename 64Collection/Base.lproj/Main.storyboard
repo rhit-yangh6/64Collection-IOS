@@ -159,7 +159,6 @@
         <!--Side Menu Navigation Controller-->
         <scene sceneID="zvA-q0-BHq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TqW-9G-Ac0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="L14-Vt-ymg" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EfD-mg-2eJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -172,13 +171,14 @@
                         <segue destination="dlu-yL-ort" kind="relationship" relationship="rootViewController" id="Ig7-yY-yXB"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TqW-9G-Ac0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2348" y="-648"/>
         </scene>
-        <!--View Controller-->
+        <!--Type Side Bar View Controller-->
         <scene sceneID="pnn-5O-SUy">
             <objects>
-                <viewController id="dlu-yL-ort" sceneMemberID="viewController">
+                <viewController id="dlu-yL-ort" customClass="TypeSideBarViewController" customModule="_4Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fpK-f2-TEx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,6 +319,9 @@
                                                 <state key="normal" title="Back To Brands">
                                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pressedBackToBrandsButton:" destination="dlu-yL-ort" eventType="touchUpInside" id="iz4-IR-ydJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
