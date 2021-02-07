@@ -54,9 +54,10 @@ class TypeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: typeCellIdentifier, for: indexPath)
-        cell.textLabel?.text = TypesManager.shared.getTypeNameAtIndex(index: indexPath.row)
-        cell.detailTextLabel?.text = TypesManager.shared.getTypeMakeAtIndex(index: indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: typeCellIdentifier, for: indexPath) as! TypeCell
+        cell.typeNameLabel?.text = TypesManager.shared.getTypeNameAtIndex(index: indexPath.row)
+        cell.typeMakeLabel?.text = TypesManager.shared.getTypeMakeAtIndex(index: indexPath.row)
+        ImageUtils.shared.load(imageView: cell.typeIconImageView, from: TypesManager.shared.getTypeIconUrlAtIndex(index: indexPath.row))
         return cell
     }
     
@@ -78,4 +79,12 @@ class TypeTableViewController: UITableViewController {
 //            }
 //        }
     }
+}
+
+class TypeCell: UITableViewCell {
+    
+    @IBOutlet weak var typeIconImageView: UIImageView!
+    @IBOutlet weak var typeNameLabel: UILabel!
+    @IBOutlet weak var typeMakeLabel: UILabel!
+    
 }

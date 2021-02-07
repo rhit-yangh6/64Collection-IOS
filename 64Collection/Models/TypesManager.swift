@@ -71,6 +71,10 @@ class TypesManager {
         return String(self._objects?[index].get(kKeyTypeMake)?.intValue ?? 0)
     }
     
+    func getTypeIconUrlAtIndex(index: Int) -> String {
+        return self._objects?[index].get(kKeyTypeIconUrl)?.stringValue ?? ""
+    }
+    
     var objectsCount: Int {
         return self._objects?.count ?? 0
     }
