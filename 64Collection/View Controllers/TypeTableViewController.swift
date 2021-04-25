@@ -62,7 +62,6 @@ class TypeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // TODO: Auth
         return false
     }
 
