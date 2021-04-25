@@ -13,12 +13,13 @@
 		E451F85225CDB51600DF36CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E451F85125CDB51600DF36CD /* Assets.xcassets */; };
 		E451F85525CDB51600DF36CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E451F85325CDB51600DF36CD /* LaunchScreen.storyboard */; };
 		E451F86925CF00E000DF36CD /* BrandTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F86825CF00E000DF36CD /* BrandTableViewController.swift */; };
-		E451F86C25CF014800DF36CD /* BrandsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F86B25CF014800DF36CD /* BrandsManager.swift */; };
 		E451F86F25CF01E000DF36CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F86E25CF01E000DF36CD /* Constants.swift */; };
 		E451F87325CF153500DF36CD /* TypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F87225CF153500DF36CD /* TypeTableViewController.swift */; };
-		E451F87725CF15D800DF36CD /* TypesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F87625CF15D800DF36CD /* TypesManager.swift */; };
 		E451F88325CF424300DF36CD /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F88225CF424300DF36CD /* ImageUtils.swift */; };
 		E451F8A125D09A5F00DF36CD /* TypeSideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F8A025D09A5F00DF36CD /* TypeSideBarViewController.swift */; };
+		E4F2A75426342A4900455776 /* LeanCloudService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2A75326342A4900455776 /* LeanCloudService.swift */; };
+		E4F2A75D26342ABA00455776 /* BrandDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2A75B26342ABA00455776 /* BrandDto.swift */; };
+		E4F2A75E26342ABA00455776 /* TypeDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2A75C26342ABA00455776 /* TypeDto.swift */; };
 		F719F34778A32A678D20366B /* Pods_64Collection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E74F0D3A0F517D3AB09285 /* Pods_64Collection.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,12 +35,13 @@
 		E451F85425CDB51600DF36CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E451F85625CDB51600DF36CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E451F86825CF00E000DF36CD /* BrandTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandTableViewController.swift; sourceTree = "<group>"; };
-		E451F86B25CF014800DF36CD /* BrandsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsManager.swift; sourceTree = "<group>"; };
 		E451F86E25CF01E000DF36CD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E451F87225CF153500DF36CD /* TypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableViewController.swift; sourceTree = "<group>"; };
-		E451F87625CF15D800DF36CD /* TypesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesManager.swift; sourceTree = "<group>"; };
 		E451F88225CF424300DF36CD /* ImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		E451F8A025D09A5F00DF36CD /* TypeSideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSideBarViewController.swift; sourceTree = "<group>"; };
+		E4F2A75326342A4900455776 /* LeanCloudService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeanCloudService.swift; sourceTree = "<group>"; };
+		E4F2A75B26342ABA00455776 /* BrandDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandDto.swift; sourceTree = "<group>"; };
+		E4F2A75C26342ABA00455776 /* TypeDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeDto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +96,13 @@
 			children = (
 				E451F84825CDB51400DF36CD /* AppDelegate.swift */,
 				E451F84A25CDB51400DF36CD /* SceneDelegate.swift */,
-				E451F84E25CDB51400DF36CD /* Main.storyboard */,
 				E451F85125CDB51600DF36CD /* Assets.xcassets */,
+				E451F84E25CDB51400DF36CD /* Main.storyboard */,
 				E451F85325CDB51600DF36CD /* LaunchScreen.storyboard */,
 				E451F85625CDB51600DF36CD /* Info.plist */,
+				E4F2A75926342A7600455776 /* Dto */,
+				E4F2A75226342A2B00455776 /* Service */,
 				E451F87C25CF205500DF36CD /* View Controllers */,
-				E451F87E25CF206600DF36CD /* Models */,
 				E451F88025CF206D00DF36CD /* Utils */,
 			);
 			path = 64Collection;
@@ -115,15 +118,6 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		E451F87E25CF206600DF36CD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E451F86B25CF014800DF36CD /* BrandsManager.swift */,
-				E451F87625CF15D800DF36CD /* TypesManager.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		E451F88025CF206D00DF36CD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +125,23 @@
 				E451F88225CF424300DF36CD /* ImageUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4F2A75226342A2B00455776 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E4F2A75326342A4900455776 /* LeanCloudService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E4F2A75926342A7600455776 /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				E4F2A75B26342ABA00455776 /* BrandDto.swift */,
+				E4F2A75C26342ABA00455776 /* TypeDto.swift */,
+			);
+			path = Dto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,13 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E451F86C25CF014800DF36CD /* BrandsManager.swift in Sources */,
+				E4F2A75D26342ABA00455776 /* BrandDto.swift in Sources */,
 				E451F84925CDB51400DF36CD /* AppDelegate.swift in Sources */,
 				E451F84B25CDB51400DF36CD /* SceneDelegate.swift in Sources */,
 				E451F86925CF00E000DF36CD /* BrandTableViewController.swift in Sources */,
+				E4F2A75E26342ABA00455776 /* TypeDto.swift in Sources */,
 				E451F8A125D09A5F00DF36CD /* TypeSideBarViewController.swift in Sources */,
-				E451F87725CF15D800DF36CD /* TypesManager.swift in Sources */,
 				E451F86F25CF01E000DF36CD /* Constants.swift in Sources */,
+				E4F2A75426342A4900455776 /* LeanCloudService.swift in Sources */,
 				E451F87325CF153500DF36CD /* TypeTableViewController.swift in Sources */,
 				E451F88325CF424300DF36CD /* ImageUtils.swift in Sources */,
 			);

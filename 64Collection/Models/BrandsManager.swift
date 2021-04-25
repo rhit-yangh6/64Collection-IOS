@@ -69,7 +69,7 @@ class BrandsManager {
     }
     
     func getBrandPhotoUrlAtIndex(index: Int) -> String {
-        return self._objects?[index].get(kKeyBrandPhotoUrl)?.stringValue ?? ""
+        return self._objects?[index].get(kKeyBrandImgUrl)?.stringValue ?? ""
     }
     
     var objectsCount: Int {

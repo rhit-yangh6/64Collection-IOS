@@ -8,21 +8,23 @@
 import Foundation
 
 let kClassBrand = "Brand"
-let kKeyBrandName = "Name"
-let kKeyBrandCountry = "Country"
-let kKeyBrandPhotoUrl = "PhotoUrl"
+let kKeyBrandName = "name"
+let kKeyBrandCountry = "country"
+let kKeyBrandImgUrl = "imgUrl"
 
 let kClassType = "Type"
-let kKeyTypeName = "Name"
-let kKeyTypeMake = "Make"
-let kKeyTypeBrandId = "BrandId"
-let kKeyTypeDiecastBrand = "DiecastBrand"
-let kKeyTypePhotoUrls = "PhotoUrls"
-let kKeyTypeIconUrl = "IconUrl"
+let kKeyTypeName = "name"
+let kKeyTypeMake = "make"
+let kKeyTypeBrandId = "brandId"
+let kKeyTypeDiecastBrand = "diecastBrand"
+let kKeyTypePhotoUrls = "imgUrls"
+let kKeyTypeCategory = "category"
 
 let brandCellIdentifier = "BrandCell"
 let typeCellIdentifier = "TypeCell"
 
 let typesSegueIdentifier = "TypesSegue"
+
+let kKeyObjectId = "objectId"
 
 class Constants {}
