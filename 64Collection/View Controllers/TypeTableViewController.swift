@@ -72,11 +72,11 @@ class TypeTableViewController: UITableViewController {
 //    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == typeCellIdentifier {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                (segue.destination as! MessageTableViewController).groupId = GroupsManager.shared.getGroupIdWithIndex(index: indexPath.row)
-//            }
-//        }
+        if segue.identifier == typeDetailSegueIdentifier {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                (segue.destination as! DetailViewController).typeDto = LeanCloudService.shared.getTypeAtIndex(index: indexPath.row)
+            }
+        }
     }
 }
 

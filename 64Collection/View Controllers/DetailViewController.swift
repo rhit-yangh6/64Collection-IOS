@@ -10,17 +10,19 @@ import UIKit
 
 class DetailViewController: UIViewController{
     @IBOutlet weak var pageView: UIView!
+    var typeDto: TypeDto?
     let dataSource = [
     "https://i.pinimg.com/originals/7f/7f/36/7f7f36313d5f03175087a828dce5982d.jpg", "https://static1.srcdn.com/wordpress/wp-content/uploads/2021/03/Among-Us-Random-Name-Generator.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5"
     ]
     var currentViewControllerIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        //configurePageViewController()
+        configurePageViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        print(typeDto!.name)
     }
     
     func configurePageViewController() {
@@ -63,7 +65,6 @@ class DetailViewController: UIViewController{
     }
     
     func detailViewControllerAt(index: Int) -> ImageDetailViewController? {
-        
         if index >= self.dataSource.count || self.dataSource.count == 0 {
             return nil
         }
@@ -91,12 +92,9 @@ extension DetailViewController: UIPageViewControllerDelegate, UIPageViewControll
         guard var currentIndex = imageDetailViewController.index else {
             return nil
         }
-
-        
         if currentIndex == 0 {
             return nil
         }
-        
         currentIndex -= 1
         currentViewControllerIndex = currentIndex
         return detailViewControllerAt(index: currentIndex)
@@ -104,18 +102,14 @@ extension DetailViewController: UIPageViewControllerDelegate, UIPageViewControll
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let imageDetailViewController = viewController as! ImageDetailViewController
-        
         guard var currentIndex = imageDetailViewController.index else {
             return nil
         }
-        
         if currentIndex == self.dataSource.count {
             return nil
         }
-        
         currentIndex += 1
         currentViewControllerIndex = currentIndex
         return detailViewControllerAt(index: currentIndex)
     }
-    
 }

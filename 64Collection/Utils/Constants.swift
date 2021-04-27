@@ -24,6 +24,7 @@ let brandCellIdentifier = "BrandCell"
 let typeCellIdentifier = "TypeCell"
 
 let typesSegueIdentifier = "TypesSegue"
+let typeDetailSegueIdentifier = "TypeDetailSegue"
 
 let kKeyObjectId = "objectId"
 
