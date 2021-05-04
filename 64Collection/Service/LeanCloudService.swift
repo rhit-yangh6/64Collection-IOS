@@ -48,6 +48,7 @@ class LeanCloudService {
         let query = LCQuery(className: kClassType)
         query.whereKey(kKeyTypeBrandId, .equalTo(brandId))
         query.whereKey(kKeyTypeName, .matchedRegularExpression(searchString, option: "i"))
+        query.whereKey(kKeyTypeName, .ascending)
         query.find { result in
             switch result {
             case .success:
