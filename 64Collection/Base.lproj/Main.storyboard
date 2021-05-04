@@ -16,9 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for brands" id="GCu-kr-yUD">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BrandCell" id="itt-mZ-6og" customClass="BrandCell" customModule="_4Collection" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="47"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="itt-mZ-6og" id="L9I-i5-VFb">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="47"/>
@@ -75,6 +84,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="64Collection Brands" id="sIt-Lh-JKG"/>
+                    <connections>
+                        <outlet property="brandSearchBar" destination="GCu-kr-yUD" id="GZc-Ff-D6H"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogd-LN-lTT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,9 +100,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for types" id="fpu-9n-IyN">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TypeCell" textLabel="ST5-vg-win" detailTextLabel="Tcc-bZ-HwU" style="IBUITableViewCellStyleSubtitle" id="RBA-iC-tBS">
-                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RBA-iC-tBS" id="cN2-us-jEI">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
@@ -123,6 +140,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="b46-rW-I2l"/>
+                    <connections>
+                        <outlet property="typeSearchBar" destination="fpu-9n-IyN" id="kGS-bK-Eew"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VkF-w4-aHP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -457,7 +477,7 @@
             </objects>
             <point key="canvasLocation" x="-652" y="72"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Search For Type-->
         <scene sceneID="Tyt-s8-UiX">
             <objects>
                 <tableViewController id="Qj3-Q8-wWb" sceneMemberID="viewController">
@@ -480,17 +500,17 @@
                             <outlet property="delegate" destination="Qj3-Q8-wWb" id="bXr-1j-9yr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ihU-PJ-8rY"/>
+                    <navigationItem key="navigationItem" title="Search For Type" id="ihU-PJ-8rY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AdP-lF-zMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="457" y="777"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="fZO-X2-ZpZ">
             <objects>
                 <navigationController id="YXR-nZ-2An" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="fR3-sD-sjw"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="fR3-sD-sjw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QeJ-68-Ci3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -507,7 +527,7 @@
         <scene sceneID="Rvf-os-Dw3">
             <objects>
                 <navigationController id="r0Z-ff-nGZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cars" image="icons8-car-24" id="STq-mb-92F"/>
+                    <tabBarItem key="tabBarItem" title="Cars" image="car" catalog="system" id="STq-mb-92F"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="m5S-Qq-rr2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -524,7 +544,8 @@
     <resources>
         <image name="account_box_36pt" width="36" height="36"/>
         <image name="arrow_back_ios_36pt" width="36" height="36"/>
-        <image name="icons8-car-24" width="24" height="24"/>
+        <image name="car" catalog="system" width="128" height="93"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
