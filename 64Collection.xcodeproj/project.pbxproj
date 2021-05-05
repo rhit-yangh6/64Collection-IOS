@@ -19,6 +19,7 @@
 		E451F87325CF153500DF36CD /* TypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F87225CF153500DF36CD /* TypeTableViewController.swift */; };
 		E451F88325CF424300DF36CD /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F88225CF424300DF36CD /* ImageUtils.swift */; };
 		E451F8A125D09A5F00DF36CD /* TypeSideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F8A025D09A5F00DF36CD /* TypeSideBarViewController.swift */; };
+		E4C37ECB2642A28800B7BAFD /* CategoryDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C37ECA2642A28800B7BAFD /* CategoryDto.swift */; };
 		E4F2A75426342A4900455776 /* LeanCloudService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2A75326342A4900455776 /* LeanCloudService.swift */; };
 		E4F2A75D26342ABA00455776 /* BrandDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2A75B26342ABA00455776 /* BrandDto.swift */; };
 		E4F2A75E26342ABA00455776 /* TypeDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2A75C26342ABA00455776 /* TypeDto.swift */; };
@@ -43,6 +44,7 @@
 		E451F87225CF153500DF36CD /* TypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableViewController.swift; sourceTree = "<group>"; };
 		E451F88225CF424300DF36CD /* ImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		E451F8A025D09A5F00DF36CD /* TypeSideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSideBarViewController.swift; sourceTree = "<group>"; };
+		E4C37ECA2642A28800B7BAFD /* CategoryDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDto.swift; sourceTree = "<group>"; };
 		E4F2A75326342A4900455776 /* LeanCloudService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeanCloudService.swift; sourceTree = "<group>"; };
 		E4F2A75B26342ABA00455776 /* BrandDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandDto.swift; sourceTree = "<group>"; };
 		E4F2A75C26342ABA00455776 /* TypeDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeDto.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				E4F2A75B26342ABA00455776 /* BrandDto.swift */,
 				E4F2A75C26342ABA00455776 /* TypeDto.swift */,
+				E4C37ECA2642A28800B7BAFD /* CategoryDto.swift */,
 			);
 			path = Dto;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				E451F86925CF00E000DF36CD /* BrandTableViewController.swift in Sources */,
 				E4F2A75E26342ABA00455776 /* TypeDto.swift in Sources */,
 				E451F8A125D09A5F00DF36CD /* TypeSideBarViewController.swift in Sources */,
+				E4C37ECB2642A28800B7BAFD /* CategoryDto.swift in Sources */,
 				E451F86F25CF01E000DF36CD /* Constants.swift in Sources */,
 				E4F2A75426342A4900455776 /* LeanCloudService.swift in Sources */,
 				E451F87325CF153500DF36CD /* TypeTableViewController.swift in Sources */,

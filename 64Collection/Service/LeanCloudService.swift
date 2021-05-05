@@ -12,6 +12,7 @@ class LeanCloudService {
     
     var brandList: [BrandDto]?
     var typeList: [TypeDto]?
+    var categoryList: [CategoryDto]?
     
     static let shared = LeanCloudService()
     
@@ -71,6 +72,38 @@ class LeanCloudService {
             }
             changeListener?()
         }
+    }
+    
+    func retrieveCategoryList(changeListener: (() -> Void)?) {
+        self.categoryList = [CategoryDto]()
+        let query = LCQuery(className: kClassCategory)
+        query.find { result in
+            switch result {
+            case .success:
+                if result.objects == nil {
+                    changeListener?()
+                    return
+                }
+                for obj in result.objects! {
+                    let objectId = obj.get(kKeyObjectId)?.stringValue ?? ""
+                    let categoryName = obj.get(kKeyCategoryName)?.stringValue ?? ""
+                    self.categoryList?.append(CategoryDto(id: objectId, category: categoryName))
+                }
+                break
+            case .failure(error: let error):
+                print(error)
+            }
+            changeListener?()
+        }
+    }
+    
+    func getCategoryById(id: String) -> String {
+        for c in self.categoryList! {
+            if c.objectId == id {
+                return c.category
+            }
+        }
+        return "Unclassified"
     }
     
     func getBrandsCount() -> Int {
