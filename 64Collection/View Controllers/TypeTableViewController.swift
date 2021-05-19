@@ -17,36 +17,37 @@ class TypeTableViewController: UITableViewController, UISearchBarDelegate {
         self.typeSearchBar.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
                                                             target: self,
-                                                            action: #selector(preRefresh))
+                                                            action: #selector(refresh))
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        preRefresh()
-    }
-    
-    @objc func preRefresh() {
-        LeanCloudService.shared.retrieveCategoryList(changeListener: self.refresh)
+        refresh()
     }
     
     @objc func refresh() {
-        LeanCloudService.shared.retrieveTypesList(searchString: self.typeSearchBar.text ?? "",
-                                                  brandId: self.brandId,
-                                                  changeListener: self.tableView.reloadData)
+        BackendService.shared.retrieveTypesList(searchString: self.typeSearchBar.text ?? "",
+                                                brandId: self.brandId,
+                                                changeListener: self.tableView.reloadData)
+        //        LeanCloudService.shared.retrieveTypesList(searchString: self.typeSearchBar.text ?? "",
+        //                                                  brandId: self.brandId,
+        //                                                  changeListener: self.tableView.reloadData)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return LeanCloudService.shared.getTypesCount()
+        BackendService.shared.getTypesCount()
+        // return LeanCloudService.shared.getTypesCount()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: typeCellIdentifier, for: indexPath) as! TypeCell
-        let typeDto = LeanCloudService.shared.getTypeAtIndex(index: indexPath.row)
+        let typeDto = BackendService.shared.getTypeAtIndex(index: indexPath.row)
+        // let typeDto = LeanCloudService.shared.getTypeAtIndex(index: indexPath.row)
         cell.typeNameLabel?.text = typeDto.name
         cell.typeMakeLabel?.text = String(typeDto.make)
-        cell.typeCategoryImage.image = CategoryIconMap[LeanCloudService.shared.getCategoryById(id: typeDto.category)] as? UIImage ?? UIImage(named: "unclassified")
-        print(LeanCloudService.shared.getCategoryById(id: typeDto.category))
+        cell.typeCategoryImage.image = CategoryIconMap[typeDto.category] as? UIImage ?? UIImage(named: "unclassified")
+        // print(typeDto.imgUrls)
         return cell
     }
     
@@ -63,7 +64,9 @@ class TypeTableViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == typeDetailSegueIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
-                (segue.destination as! DetailViewController).typeDto = LeanCloudService.shared.getTypeAtIndex(index: indexPath.row)
+                (segue.destination as! DetailViewController).typeDto =
+                    BackendService.shared.getTypeAtIndex(index: indexPath.row)
+                // LeanCloudService.shared.getTypeAtIndex(index: indexPath.row)
             }
         }
     }

@@ -16,6 +16,7 @@ PODS:
   - SwiftProtobuf (1.15.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - Kingfisher (~> 6.0)
   - LeanCloud
   - SideMenu
@@ -37,6 +38,6 @@ SPEC CHECKSUMS:
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftProtobuf: 3320217e9d8fb75f36b40282e78c482640fd75dd
 
-PODFILE CHECKSUM: f4dd72216571d192b980ddf4938ca1dd49a857c2
+PODFILE CHECKSUM: 57c2f728df785da91a716cbf9720afd061c6418d
 
 COCOAPODS: 1.10.1

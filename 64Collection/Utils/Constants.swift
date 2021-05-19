@@ -47,6 +47,9 @@ var CategoryIconMap = [
     "Hatchback": UIImage(named: "hatchback"),
     "Limousine": UIImage(named: "limousine"),
     "Pickup": UIImage(named: "pickup"),
+    "Sports": UIImage(named: "sports"),
+    "Minitruck": UIImage(named: "minitruck"),
+    "Truck": UIImage(named: "truck"),
     "Unclassified": UIImage(named: "unclassified")
 ]
 
