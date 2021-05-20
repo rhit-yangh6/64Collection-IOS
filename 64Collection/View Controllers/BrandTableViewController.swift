@@ -28,9 +28,9 @@ class BrandTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     @IBAction func refreshTriggered(_ sender: UIRefreshControl) {
-        if BackendService.shared.getBrandsCount() == 0 {
-            return
-        }
+//        if BackendService.shared.getBrandsCount() == 0 {
+//            return
+//        }
         refresh()
     }
     
