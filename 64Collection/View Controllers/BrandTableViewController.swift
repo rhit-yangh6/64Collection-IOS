@@ -13,13 +13,13 @@ class BrandTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
-        //                                                            target: self,
-        //                                                            action: #selector(showAddBrandDialog))
         brandSearchBar.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
-                                                            target: self,
-                                                            action: #selector(refresh))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+//                target: self,
+//                action: #selector(showAddBrandDialog))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
+//                target: self,
+//                action: #selector(refresh))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,13 +27,25 @@ class BrandTableViewController: UITableViewController, UISearchBarDelegate {
         refresh()
     }
     
+    @IBAction func refreshTriggered(_ sender: UIRefreshControl) {
+        if BackendService.shared.getBrandsCount() == 0 {
+            return
+        }
+        refresh()
+    }
+    
     @objc func refresh() {
-        BackendService.shared.retrieveBrandsList(searchString: brandSearchBar.text ?? "", changeListener: self.tableView.reloadData)
+        BackendService.shared.retrieveBrandsList(searchString: brandSearchBar.text ?? "", changeListener: self.renderData)
         // LeanCloudService.shared.retrieveBrandsList(searchString: brandSearchBar.text ?? "", changeListener: self.tableView.reloadData)
     }
     
+    func renderData() {
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(BackendService.shared.getBrandsCount())
+        // print(BackendService.shared.getBrandsCount())
         return BackendService.shared.getBrandsCount()
         // return LeanCloudService.shared.getBrandsCount()
     }
