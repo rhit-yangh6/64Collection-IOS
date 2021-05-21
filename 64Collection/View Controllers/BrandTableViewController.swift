@@ -8,9 +8,9 @@
 import UIKit
 
 class BrandTableViewController: UITableViewController, UISearchBarDelegate {
-    
+
     @IBOutlet weak var brandSearchBar: UISearchBar!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         brandSearchBar.delegate = self
@@ -21,35 +21,31 @@ class BrandTableViewController: UITableViewController, UISearchBarDelegate {
 //                target: self,
 //                action: #selector(refresh))
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refresh()
     }
-    
+
     @IBAction func refreshTriggered(_ sender: UIRefreshControl) {
-//        if BackendService.shared.getBrandsCount() == 0 {
-//            return
-//        }
         refresh()
     }
-    
+
     @objc func refresh() {
         BackendService.shared.retrieveBrandsList(searchString: brandSearchBar.text ?? "", changeListener: self.renderData)
         // LeanCloudService.shared.retrieveBrandsList(searchString: brandSearchBar.text ?? "", changeListener: self.tableView.reloadData)
     }
-    
+
     func renderData() {
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // print(BackendService.shared.getBrandsCount())
         return BackendService.shared.getBrandsCount()
         // return LeanCloudService.shared.getBrandsCount()
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: brandCellIdentifier, for: indexPath) as! BrandCell
         let brandDto = BackendService.shared.getBrandAtIndex(index: indexPath.row)
@@ -59,17 +55,17 @@ class BrandTableViewController: UITableViewController, UISearchBarDelegate {
         ImageUtils.shared.load(imageView: cell.brandLogoImageView, from: brandDto.imgUrl)
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return false
     }
-    
+
     //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     //        if editingStyle == .delete {
     //            BrandsManager.shared.deleteBrandWithId(id: BrandsManager.shared.getBrandIdAtIndex(index: indexPath.row), changeListener: refresh)
     //        }
     //    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == typesSegueIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -79,9 +75,9 @@ class BrandTableViewController: UITableViewController, UISearchBarDelegate {
             }
         }
     }
-    
+
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) { self.refresh() }
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
