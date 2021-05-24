@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var pageView: UIView!
+    @IBOutlet weak var brandNameLabel: UILabel!
+    @IBOutlet weak var brandLogoImageView: UIImageView!
     @IBOutlet weak var typeNameLabel: UILabel!
     @IBOutlet weak var typeMakeLabel: UILabel!
     @IBOutlet weak var typeCategoryLabel: UILabel!
@@ -35,7 +37,8 @@ class DetailViewController: UIViewController {
     }
 
     func reloadData() {
-        // TODO: Brand info rendering
+        brandNameLabel.text = BackendService.shared.getTmpBrand().name
+        ImageUtils.shared.load(imageView: brandLogoImageView, from: BackendService.shared.getTmpBrand().imgUrl)
         typeNameLabel.text = typeDto?.name ?? "*TypeName*"
         typeMakeLabel.text = String(typeDto!.make)
         typeCategoryLabel.text = typeDto?.category ?? "*Category*"
