@@ -42,7 +42,7 @@ class BrandTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return BackendService.shared.getBrandsCount()
+        BackendService.shared.getBrandsCount()
         // return LeanCloudService.shared.getBrandsCount()
     }
 
@@ -57,26 +57,22 @@ class BrandTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
+        false
     }
-
-    //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    //        if editingStyle == .delete {
-    //            BrandsManager.shared.deleteBrandWithId(id: BrandsManager.shared.getBrandIdAtIndex(index: indexPath.row), changeListener: refresh)
-    //        }
-    //    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == typesSegueIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
                 (segue.destination as! TypeTableViewController).brandId = //BrandsManager.shared.getBrandIdAtIndex(index: indexPath.row)
-                    // LeanCloudService.shared.getBrandAtIndex(index: indexPath.row).brandId
-                    BackendService.shared.getBrandAtIndex(index: indexPath.row).brandId
+                        // LeanCloudService.shared.getBrandAtIndex(index: indexPath.row).brandId
+                        BackendService.shared.getBrandAtIndex(index: indexPath.row).brandId
             }
         }
     }
 
-    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) { self.refresh() }
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        refresh()
+    }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()

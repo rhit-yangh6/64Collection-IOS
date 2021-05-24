@@ -200,7 +200,6 @@
                                     <constraint firstItem="8ut-Kz-gR9" firstAttribute="leading" secondItem="HjH-ZX-LDc" secondAttribute="leading" id="WIr-r5-6QQ"/>
                                     <constraint firstItem="8ut-Kz-gR9" firstAttribute="centerY" secondItem="HjH-ZX-LDc" secondAttribute="centerY" id="cnP-PE-iDK"/>
                                     <constraint firstAttribute="trailing" secondItem="8ut-Kz-gR9" secondAttribute="trailing" id="pGp-cI-ef6"/>
-                                    <constraint firstAttribute="height" constant="300" id="wTb-0f-7YJ"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9G8-bo-G8k">

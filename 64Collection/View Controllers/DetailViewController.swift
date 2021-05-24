@@ -41,8 +41,8 @@ class DetailViewController: UIViewController {
         ImageUtils.shared.load(imageView: brandLogoImageView, from: BackendService.shared.getTmpBrand().imgUrl)
         typeNameLabel.text = typeDto?.name ?? "*TypeName*"
         typeMakeLabel.text = String(typeDto!.make)
-        typeCategoryLabel.text = typeDto?.category ?? "*Category*"
-        typeDiecastBrandLabel.text = typeDto?.diecastBrand ?? "*DiecastBrand*"
+        typeCategoryLabel.text = "Category: \(typeDto!.category)"
+        typeDiecastBrandLabel.text = "Diecast Brand: \(typeDto!.diecastBrand)"
     }
 
     func configurePageViewController() {

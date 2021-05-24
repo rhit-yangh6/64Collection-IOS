@@ -14,7 +14,7 @@ class TypeTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.typeSearchBar.delegate = self
+        typeSearchBar.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
                 target: self,
                 action: #selector(refresh))
@@ -52,14 +52,8 @@ class TypeTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
+        false
     }
-
-    //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    //        if editingStyle == .delete {
-    //            TypesManager.shared.deleteTypeWithId(id: TypesManager.shared.getTypeIdAtIndex(index: indexPath.row), changeListener: refresh)
-    //        }
-    //    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == typeDetailSegueIdentifier {
