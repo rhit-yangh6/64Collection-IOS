@@ -10,6 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var pageView: UIView!
+    @IBOutlet weak var typeNameLabel: UILabel!
+    @IBOutlet weak var typeMakeLabel: UILabel!
+    @IBOutlet weak var typeCategoryLabel: UILabel!
+    @IBOutlet weak var typeDiecastBrandLabel: UILabel!
     var typeDto: TypeDto?
 //    let dataSource = [
 //    "https://i.pinimg.com/originals/7f/7f/36/7f7f36313d5f03175087a828dce5982d.jpg", "https://static1.srcdn.com/wordpress/wp-content/uploads/2021/03/Among-Us-Random-Name-Generator.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5"
@@ -21,13 +25,21 @@ class DetailViewController: UIViewController {
         print(typeDto!.imgUrls)
         if typeDto!.imgUrls.isEmpty {
             return
-        } else {
-            configurePageViewController()
         }
+        configurePageViewController()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        BackendService.shared.retrieveOneBrand(brandId: typeDto!.brandId, changeListener: reloadData)
+    }
+
+    func reloadData() {
+        // TODO: Brand info rendering
+        typeNameLabel.text = typeDto?.name ?? "*TypeName*"
+        typeMakeLabel.text = String(typeDto!.make)
+        typeCategoryLabel.text = typeDto?.category ?? "*Category*"
+        typeDiecastBrandLabel.text = typeDto?.diecastBrand ?? "*DiecastBrand*"
     }
 
     func configurePageViewController() {
@@ -84,11 +96,11 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return currentViewControllerIndex
+        currentViewControllerIndex
     }
 
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return typeDto!.imgUrls.count
+        typeDto!.imgUrls.count
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

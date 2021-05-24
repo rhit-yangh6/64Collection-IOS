@@ -14,13 +14,15 @@ class TypeDto {
     var objectId: String
     var diecastBrand: String
     var make: Int
+    var brandId: String
     
-    public init (objectId: String, name: String, make: Int, diecastBrand: String, category: String, imgUrls: [String]) {
+    public init (objectId: String, name: String, make: Int, diecastBrand: String, category: String, imgUrls: [String], brandId: String) {
         self.objectId = objectId
         self.name = name
         self.make = make
         self.diecastBrand = diecastBrand
         self.category = category
         self.imgUrls = imgUrls
+        self.brandId = brandId
     }
 }
