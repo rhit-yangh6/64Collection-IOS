@@ -309,13 +309,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Ea-9z-pmI">
-                                <rect key="frame" x="10" y="328" width="394" height="250"/>
+                                <rect key="frame" x="10" y="72" width="394" height="762"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y1c-o5-0BO"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5Ea-9z-pmI" firstAttribute="height" secondItem="rdL-OL-WPU" secondAttribute="height" multiplier="0.279018" id="UmP-Fc-OXa"/>
+                            <constraint firstItem="5Ea-9z-pmI" firstAttribute="height" secondItem="rdL-OL-WPU" secondAttribute="height" multiplier="0.85" id="UmP-Fc-OXa"/>
                             <constraint firstItem="5Ea-9z-pmI" firstAttribute="leading" secondItem="Y1c-o5-0BO" secondAttribute="leading" constant="10" id="Y73-NK-fph"/>
                             <constraint firstItem="5Ea-9z-pmI" firstAttribute="centerY" secondItem="Y1c-o5-0BO" secondAttribute="centerY" id="jCm-b0-hMp"/>
                             <constraint firstItem="Y1c-o5-0BO" firstAttribute="trailing" secondItem="5Ea-9z-pmI" secondAttribute="trailing" constant="10" id="suj-WB-aOl"/>
