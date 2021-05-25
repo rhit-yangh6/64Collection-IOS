@@ -202,8 +202,8 @@
                                     <constraint firstAttribute="trailing" secondItem="8ut-Kz-gR9" secondAttribute="trailing" id="pGp-cI-ef6"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9G8-bo-G8k">
-                                <rect key="frame" x="20" y="628" width="374" height="140"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9G8-bo-G8k">
+                                <rect key="frame" x="20" y="628" width="374" height="61"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOl-7M-1ZX">
                                         <rect key="frame" x="152" y="0.0" width="70" height="20.5"/>
@@ -212,19 +212,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DiecastBrand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hct-1k-k89">
-                                        <rect key="frame" x="136" y="40" width="102.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZV-JW-jeL">
-                                        <rect key="frame" x="166.5" y="79.5" width="41.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbQ-iU-9IS">
-                                        <rect key="frame" x="166.5" y="119.5" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="136" y="40.5" width="102.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -276,7 +264,6 @@
                             <constraint firstItem="9G8-bo-G8k" firstAttribute="centerX" secondItem="7cb-Rj-drp" secondAttribute="centerX" id="H5Q-Yp-rjf"/>
                             <constraint firstItem="7cb-Rj-drp" firstAttribute="trailing" secondItem="UWY-uq-iKu" secondAttribute="trailing" constant="45" id="KvI-0W-226"/>
                             <constraint firstItem="HjH-ZX-LDc" firstAttribute="centerY" secondItem="hYv-vy-khB" secondAttribute="centerY" id="QoM-ot-idf"/>
-                            <constraint firstItem="7cb-Rj-drp" firstAttribute="bottom" secondItem="9G8-bo-G8k" secondAttribute="bottom" constant="45" id="R1s-ye-gwn"/>
                             <constraint firstItem="HjH-ZX-LDc" firstAttribute="height" secondItem="hYv-vy-khB" secondAttribute="height" multiplier="0.334821" id="UKs-DE-aQX"/>
                             <constraint firstItem="UWY-uq-iKu" firstAttribute="top" secondItem="7cb-Rj-drp" secondAttribute="top" constant="45" id="dtG-cc-4eh"/>
                             <constraint firstItem="UWY-uq-iKu" firstAttribute="leading" secondItem="7cb-Rj-drp" secondAttribute="leading" constant="45" id="lyx-VR-SKR"/>
