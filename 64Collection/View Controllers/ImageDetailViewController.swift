@@ -20,6 +20,8 @@ class ImageDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         ImageUtils.shared.load(imageView: carImageView, from: imgUrl ?? "")
+        carImageView.contentMode = .scaleAspectFit
+        carImageView.clipsToBounds = true
     }
 
 }

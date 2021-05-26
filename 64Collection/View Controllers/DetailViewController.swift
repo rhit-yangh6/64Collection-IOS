@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(typeDto!.imgUrls)
+        // print(typeDto!.imgUrls)
         if typeDto!.imgUrls.isEmpty {
             return
         }

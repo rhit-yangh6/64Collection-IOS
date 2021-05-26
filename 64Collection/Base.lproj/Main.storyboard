@@ -294,17 +294,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Ea-9z-pmI">
-                                <rect key="frame" x="10" y="72" width="394" height="762"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ea-9z-pmI">
+                                <rect key="frame" x="4" y="14" width="406" height="878"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y1c-o5-0BO"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5Ea-9z-pmI" firstAttribute="height" secondItem="rdL-OL-WPU" secondAttribute="height" multiplier="0.85" id="UmP-Fc-OXa"/>
-                            <constraint firstItem="5Ea-9z-pmI" firstAttribute="leading" secondItem="Y1c-o5-0BO" secondAttribute="leading" constant="10" id="Y73-NK-fph"/>
+                            <constraint firstItem="5Ea-9z-pmI" firstAttribute="centerX" secondItem="Y1c-o5-0BO" secondAttribute="centerX" id="2xO-Ho-3XS"/>
+                            <constraint firstItem="5Ea-9z-pmI" firstAttribute="width" secondItem="rdL-OL-WPU" secondAttribute="width" multiplier="0.98" id="TBf-4y-ZKK"/>
+                            <constraint firstItem="5Ea-9z-pmI" firstAttribute="height" secondItem="rdL-OL-WPU" secondAttribute="height" multiplier="0.98" id="UmP-Fc-OXa"/>
                             <constraint firstItem="5Ea-9z-pmI" firstAttribute="centerY" secondItem="Y1c-o5-0BO" secondAttribute="centerY" id="jCm-b0-hMp"/>
-                            <constraint firstItem="Y1c-o5-0BO" firstAttribute="trailing" secondItem="5Ea-9z-pmI" secondAttribute="trailing" constant="10" id="suj-WB-aOl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eC5-K6-jZC"/>
