@@ -30,24 +30,18 @@ class TypeTableViewController: UITableViewController, UISearchBarDelegate {
         BackendService.shared.retrieveTypesList(searchString: self.typeSearchBar.text ?? "",
                 brandId: self.brandId,
                 changeListener: self.tableView.reloadData)
-        //        LeanCloudService.shared.retrieveTypesList(searchString: self.typeSearchBar.text ?? "",
-        //                                                  brandId: self.brandId,
-        //                                                  changeListener: self.tableView.reloadData)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         BackendService.shared.getTypesCount()
-        // return LeanCloudService.shared.getTypesCount()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: typeCellIdentifier, for: indexPath) as! TypeCell
         let typeDto = BackendService.shared.getTypeAtIndex(index: indexPath.row)
-        // let typeDto = LeanCloudService.shared.getTypeAtIndex(index: indexPath.row)
         cell.typeNameLabel?.text = typeDto.name
         cell.typeMakeLabel?.text = String(typeDto.make)
         cell.typeCategoryImage.image = CategoryIconMap[typeDto.category] as? UIImage ?? UIImage(named: "unclassified")
-        // print(typeDto.imgUrls)
         return cell
     }
 
@@ -60,7 +54,6 @@ class TypeTableViewController: UITableViewController, UISearchBarDelegate {
             if let indexPath = tableView.indexPathForSelectedRow {
                 (segue.destination as! DetailViewController).typeDto =
                         BackendService.shared.getTypeAtIndex(index: indexPath.row)
-                // LeanCloudService.shared.getTypeAtIndex(index: indexPath.row)
             }
         }
     }

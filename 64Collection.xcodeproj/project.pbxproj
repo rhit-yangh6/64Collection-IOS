@@ -21,7 +21,6 @@
 		E451F8A125D09A5F00DF36CD /* TypeSideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451F8A025D09A5F00DF36CD /* TypeSideBarViewController.swift */; };
 		E46A4F872654BCC10047FE9C /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46A4F862654BCC10047FE9C /* BackendService.swift */; };
 		E4C37ECB2642A28800B7BAFD /* CategoryDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C37ECA2642A28800B7BAFD /* CategoryDto.swift */; };
-		E4F2A75426342A4900455776 /* LeanCloudService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2A75326342A4900455776 /* LeanCloudService.swift */; };
 		E4F2A75D26342ABA00455776 /* BrandDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2A75B26342ABA00455776 /* BrandDto.swift */; };
 		E4F2A75E26342ABA00455776 /* TypeDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2A75C26342ABA00455776 /* TypeDto.swift */; };
 		F719F34778A32A678D20366B /* Pods_64Collection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E74F0D3A0F517D3AB09285 /* Pods_64Collection.framework */; };
@@ -47,7 +46,6 @@
 		E451F8A025D09A5F00DF36CD /* TypeSideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSideBarViewController.swift; sourceTree = "<group>"; };
 		E46A4F862654BCC10047FE9C /* BackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
 		E4C37ECA2642A28800B7BAFD /* CategoryDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDto.swift; sourceTree = "<group>"; };
-		E4F2A75326342A4900455776 /* LeanCloudService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeanCloudService.swift; sourceTree = "<group>"; };
 		E4F2A75B26342ABA00455776 /* BrandDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandDto.swift; sourceTree = "<group>"; };
 		E4F2A75C26342ABA00455776 /* TypeDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeDto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +138,6 @@
 		E4F2A75226342A2B00455776 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				E4F2A75326342A4900455776 /* LeanCloudService.swift */,
 				E46A4F862654BCC10047FE9C /* BackendService.swift */,
 			);
 			path = Service;
@@ -281,7 +278,6 @@
 				E4C37ECB2642A28800B7BAFD /* CategoryDto.swift in Sources */,
 				E451F86F25CF01E000DF36CD /* Constants.swift in Sources */,
 				E46A4F872654BCC10047FE9C /* BackendService.swift in Sources */,
-				E4F2A75426342A4900455776 /* LeanCloudService.swift in Sources */,
 				E451F87325CF153500DF36CD /* TypeTableViewController.swift in Sources */,
 				E451F88325CF424300DF36CD /* ImageUtils.swift in Sources */,
 			);
@@ -438,6 +434,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.rose-hulman.yangh6.-4Collection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -458,6 +455,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.rose-hulman.yangh6.-4Collection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

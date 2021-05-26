@@ -6,7 +6,7 @@ target '64Collection' do
   use_frameworks!
 
   # Pods for 64Collection
-  pod 'LeanCloud'
+  # pod 'LeanCloud'
   pod 'SideMenu'
   pod 'Kingfisher', '~> 6.0'
   pod 'Alamofire', '~> 5.2'
