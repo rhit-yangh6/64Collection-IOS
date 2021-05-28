@@ -615,10 +615,42 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="LBz-O7-S22" kind="relationship" relationship="rootViewController" id="9qB-10-bT5"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vW9-6b-3wc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="580" y="1497"/>
+        </scene>
+        <!--Random Car Model!-->
+        <scene sceneID="xAB-TA-S1t">
+            <objects>
+                <viewController id="LBz-O7-S22" customClass="RandomPageViewController" customModule="_4Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L9S-fg-H2h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaE-CS-ZEX">
+                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="randomButtonClicked:" destination="LBz-O7-S22" eventType="touchUpInside" id="HJk-Er-7ad"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="daj-fk-zwl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Random Car Model!" id="gYS-CB-ktk"/>
+                    <connections>
+                        <segue destination="g8q-eV-vhV" kind="show" identifier="TypeDetailSegue" id="WPg-Eh-0bL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0v-6H-FFC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1471" y="1497"/>
         </scene>
         <!--Brands-->
         <scene sceneID="Rvf-os-Dw3">
@@ -639,6 +671,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="WPg-Eh-0bL"/>
         <segue reference="tSu-As-UVB"/>
     </inferredMetricsTieBreakers>
     <resources>

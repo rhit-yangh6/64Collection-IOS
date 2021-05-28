@@ -13,6 +13,7 @@ class BackendService {
     var typeList: [TypeDto]?
     var categoryList: [CategoryDto]?
     var tempBrand: BrandDto?
+    var tempType: TypeDto?
 
     static let shared = BackendService()
 
@@ -53,6 +54,28 @@ class BackendService {
                             name: brand["name"]! as! String,
                             imgUrl: brand["iconUrl"]! as! String,
                             country: brand["country"]! as! String)
+                changeListener?()
+            case .failure(let error):
+                print("Request failed with error: \(error)")
+                changeListener?()
+            }
+        }
+    }
+
+    func retrieveRandomType(changeListener: (() -> Void)?) {
+        AF.request("http://139.196.98.81:8080/64collection/type/random").responseJSON { response in
+            switch response.result {
+            case .success(let JSON):
+                let response = JSON as! NSDictionary
+
+                let type = response.object(forKey: "data")! as! NSDictionary
+                self.tempType = TypeDto(objectId: type["id"]! as! String,
+                        name: type["name"]! as! String,
+                        make: type["make"]! as! Int,
+                        diecastBrand: type["diecastBrand"] as! String,
+                        category: type["category"]! as! String,
+                        imgUrls: type["imgUrls"]! as! [String],
+                        brandId: type["brandId"]! as! String)
                 changeListener?()
             case .failure(let error):
                 print("Request failed with error: \(error)")
