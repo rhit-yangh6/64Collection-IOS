@@ -614,6 +614,9 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.087239554790000007" green="0.28401676269999998" blue="0.53431063469999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Qj3-Q8-wWb" kind="relationship" relationship="rootViewController" id="86C-jp-07d"/>
@@ -632,6 +635,9 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.087239554790000007" green="0.28401676269999998" blue="0.53431063469999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="LBz-O7-S22" kind="relationship" relationship="rootViewController" id="9qB-10-bT5"/>
@@ -649,17 +655,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaE-CS-ZEX">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaE-CS-ZEX">
+                                <rect key="frame" x="128.5" y="372" width="157" height="157"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RaE-CS-ZEX" secondAttribute="height" multiplier="1:1" id="1jA-Id-XFl"/>
+                                </constraints>
+                                <state key="normal" image="random"/>
                                 <connections>
                                     <action selector="randomButtonClicked:" destination="LBz-O7-S22" eventType="touchUpInside" id="HJk-Er-7ad"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to view a RANDOM car model!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlQ-us-OIx">
+                                <rect key="frame" x="20" y="561" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="daj-fk-zwl"/>
-                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="RaE-CS-ZEX" firstAttribute="centerY" secondItem="daj-fk-zwl" secondAttribute="centerY" id="EQd-Ue-c21"/>
+                            <constraint firstItem="RaE-CS-ZEX" firstAttribute="centerX" secondItem="daj-fk-zwl" secondAttribute="centerX" id="IOA-tt-afR"/>
+                            <constraint firstItem="RaE-CS-ZEX" firstAttribute="width" secondItem="L9S-fg-H2h" secondAttribute="width" multiplier="0.38" id="b3X-fT-x3t"/>
+                            <constraint firstItem="VlQ-us-OIx" firstAttribute="leading" secondItem="daj-fk-zwl" secondAttribute="leading" constant="20" id="fjn-iu-gK3"/>
+                            <constraint firstItem="VlQ-us-OIx" firstAttribute="top" secondItem="RaE-CS-ZEX" secondAttribute="bottom" constant="32" id="gza-Hj-ezC"/>
+                            <constraint firstAttribute="trailing" secondItem="VlQ-us-OIx" secondAttribute="trailing" constant="20" id="wP4-4Z-xs8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Random Car Model!" id="gYS-CB-ktk"/>
                     <connections>
@@ -680,6 +702,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.84076183879999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.087239554790197724" green="0.28401676265497389" blue="0.53431063471573603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="K2N-am-4lI" kind="relationship" relationship="rootViewController" id="qF1-g1-r8p"/>
@@ -692,7 +717,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="O2q-ko-k5A"/>
-        <segue reference="tSu-As-UVB"/>
+        <segue reference="ef3-Ua-Wkf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="account_box_36pt" width="36" height="36"/>
@@ -700,11 +725,15 @@
         <image name="line.horizontal.3.decrease.circle" catalog="system" width="128" height="121"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="questionmark.square" catalog="system" width="128" height="114"/>
+        <image name="random" width="512" height="512"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
