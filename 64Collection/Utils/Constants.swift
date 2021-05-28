@@ -26,6 +26,7 @@ let kKeyCategoryName = "name"
 
 let brandCellIdentifier = "BrandCell"
 let typeCellIdentifier = "TypeCell"
+let categoryCellIdentifier = "CategoryCell"
 
 let typesSegueIdentifier = "TypesSegue"
 let typeDetailSegueIdentifier = "TypeDetailSegue"

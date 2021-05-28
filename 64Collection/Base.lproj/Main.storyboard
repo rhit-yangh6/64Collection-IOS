@@ -529,22 +529,51 @@
             </objects>
             <point key="canvasLocation" x="-652" y="72"/>
         </scene>
-        <!--Search For Type-->
+        <!--Browse By Category-->
         <scene sceneID="Tyt-s8-UiX">
             <objects>
-                <tableViewController id="Qj3-Q8-wWb" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LYY-g8-uoy">
+                <tableViewController id="Qj3-Q8-wWb" customClass="CategoryTableViewController" customModule="_4Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LYY-g8-uoy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="83i-B6-d90">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="83i-B6-d90" customClass="CategoryCell" customModule="_4Collection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="83i-B6-d90" id="rdA-gm-uZ4">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HXB-Mm-jcr">
+                                            <rect key="frame" x="10" y="6" width="394" height="40"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="90X-YR-IoK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="VRf-2Z-cEM"/>
+                                                        <constraint firstAttribute="width" secondItem="90X-YR-IoK" secondAttribute="height" multiplier="1:1" id="ZIK-5C-RC3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nt-IX-SmF">
+                                                    <rect key="frame" x="50" y="0.0" width="344" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="HXB-Mm-jcr" secondAttribute="trailing" constant="10" id="B0W-Zs-SW8"/>
+                                        <constraint firstItem="HXB-Mm-jcr" firstAttribute="leading" secondItem="rdA-gm-uZ4" secondAttribute="leading" constant="10" id="Be6-TB-xTV"/>
+                                        <constraint firstItem="HXB-Mm-jcr" firstAttribute="centerY" secondItem="rdA-gm-uZ4" secondAttribute="centerY" id="TQ0-Hb-gtg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryImageView" destination="90X-YR-IoK" id="LvU-Mg-QyU"/>
+                                    <outlet property="categoryLabel" destination="7Nt-IX-SmF" id="ryw-4e-TKi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -552,17 +581,17 @@
                             <outlet property="delegate" destination="Qj3-Q8-wWb" id="bXr-1j-9yr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Search For Type" id="ihU-PJ-8rY"/>
+                    <navigationItem key="navigationItem" title="Browse By Category" id="ihU-PJ-8rY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AdP-lF-zMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457" y="777"/>
+            <point key="canvasLocation" x="456.52173913043481" y="776.78571428571422"/>
         </scene>
-        <!--Search-->
+        <!--Category-->
         <scene sceneID="fZO-X2-ZpZ">
             <objects>
                 <navigationController id="YXR-nZ-2An" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="fR3-sD-sjw"/>
+                    <tabBarItem key="tabBarItem" title="Category" image="list.dash" catalog="system" id="fR3-sD-sjw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QeJ-68-Ci3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -575,11 +604,11 @@
             </objects>
             <point key="canvasLocation" x="-522" y="777"/>
         </scene>
-        <!--Cars-->
+        <!--Brands-->
         <scene sceneID="Rvf-os-Dw3">
             <objects>
                 <navigationController id="r0Z-ff-nGZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cars" image="car" catalog="system" id="STq-mb-92F"/>
+                    <tabBarItem key="tabBarItem" title="Brands" image="line.horizontal.3.decrease.circle" catalog="system" id="STq-mb-92F"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="m5S-Qq-rr2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -596,8 +625,8 @@
     <resources>
         <image name="account_box_36pt" width="36" height="36"/>
         <image name="arrow_back_ios_36pt" width="36" height="36"/>
-        <image name="car" catalog="system" width="128" height="93"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="line.horizontal.3.decrease.circle" catalog="system" width="128" height="121"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
