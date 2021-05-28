@@ -523,6 +523,7 @@
                     <connections>
                         <segue destination="r0Z-ff-nGZ" kind="relationship" relationship="viewControllers" id="cMf-ri-sq9"/>
                         <segue destination="YXR-nZ-2An" kind="relationship" relationship="viewControllers" id="mfx-J2-USJ"/>
+                        <segue destination="lgV-LC-FjY" kind="relationship" relationship="viewControllers" id="4pN-ng-6w4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ve-f3-xn0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -605,6 +606,20 @@
             </objects>
             <point key="canvasLocation" x="580" y="777"/>
         </scene>
+        <!--Random-->
+        <scene sceneID="gua-X0-h7T">
+            <objects>
+                <navigationController id="lgV-LC-FjY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Random" image="questionmark.square" catalog="system" id="547-m1-zvk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Hd-zG-eoO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vW9-6b-3wc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="1497"/>
+        </scene>
         <!--Brands-->
         <scene sceneID="Rvf-os-Dw3">
             <objects>
@@ -631,6 +646,7 @@
         <image name="arrow_back_ios_36pt" width="36" height="36"/>
         <image name="line.horizontal.3.decrease.circle" catalog="system" width="128" height="121"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="questionmark.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
