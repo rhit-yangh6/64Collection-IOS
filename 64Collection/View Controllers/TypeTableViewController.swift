@@ -10,6 +10,8 @@ import UIKit
 class TypeTableViewController: UITableViewController, UISearchBarDelegate {
 
     var brandId: String!
+    var categoryString: String!
+    var isByBrand: Bool!
     @IBOutlet weak var typeSearchBar: UISearchBar!
 
     override func viewDidLoad() {
@@ -27,9 +29,13 @@ class TypeTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     @objc func refresh() {
-        BackendService.shared.retrieveTypesList(searchString: self.typeSearchBar.text ?? "",
-                brandId: self.brandId,
-                changeListener: self.tableView.reloadData)
+        if isByBrand {
+            BackendService.shared.retrieveTypesListByBrand(searchString: self.typeSearchBar.text ?? "",
+                    brandId: brandId,
+                    changeListener: tableView.reloadData)
+        } else {
+            BackendService.shared.retrieveTypesListByCategory(category: categoryString, changeListener: tableView.reloadData)
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

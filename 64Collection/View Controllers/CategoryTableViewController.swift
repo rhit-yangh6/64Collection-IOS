@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class CategoryTableViewController: UITableViewController {
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         CategoryIconMap.keys.count
     }
@@ -28,12 +28,13 @@ class CategoryTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == typeDetailSegueIdentifier {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                (segue.destination as! DetailViewController).typeDto =
-//                        BackendService.shared.getTypeAtIndex(index: indexPath.row)
-//            }
-//        }
+        if segue.identifier == typesSegueIdentifier {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                (segue.destination as! TypeTableViewController).isByBrand = false
+                let cell = tableView.cellForRow(at: indexPath) as! CategoryCell
+                (segue.destination as! TypeTableViewController).categoryString = cell.categoryLabel.text
+            }
+        }
     }
 }
 

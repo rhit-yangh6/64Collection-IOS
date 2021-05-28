@@ -61,9 +61,36 @@ class BackendService {
         }
     }
 
-    func retrieveTypesList(searchString: String, brandId: String, changeListener: (() -> Void)?) {
+    func retrieveTypesListByBrand(searchString: String, brandId: String, changeListener: (() -> Void)?) {
 
         AF.request("http://139.196.98.81:8080/64collection/type/brand_list?keyword=\(searchString)&brandId=\(brandId)").responseJSON { response in
+            switch response.result {
+            case .success(let JSON):
+                let response = JSON as! NSDictionary
+                self.typeList = [TypeDto]()
+                for type in response.object(forKey: "data")! as! NSArray {
+                    let type = type as! NSDictionary
+                    let typeDto = TypeDto(objectId: type["id"]! as! String,
+                            name: type["name"]! as! String,
+                            make: type["make"]! as! Int,
+                            diecastBrand: type["diecastBrand"] as! String,
+                            category: type["category"]! as! String,
+                            imgUrls: type["imgUrls"]! as! [String],
+                            brandId: type["brandId"]! as! String)
+                    self.typeList?.append(typeDto)
+                }
+                changeListener?()
+            case .failure(let error):
+                self.typeList = [TypeDto]()
+                print("Request failed with error: \(error)")
+                changeListener?()
+            }
+        }
+    }
+
+    func retrieveTypesListByCategory(category: String, changeListener: (() -> Void)?) {
+
+        AF.request("http://139.196.98.81:8080/64collection/type/category_list?category=\(category)").responseJSON { response in
             switch response.result {
             case .success(let JSON):
                 let response = JSON as! NSDictionary

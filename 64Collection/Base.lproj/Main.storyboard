@@ -573,6 +573,7 @@
                                 <connections>
                                     <outlet property="categoryImageView" destination="90X-YR-IoK" id="LvU-Mg-QyU"/>
                                     <outlet property="categoryLabel" destination="7Nt-IX-SmF" id="ryw-4e-TKi"/>
+                                    <segue destination="bAa-RB-xy7" kind="show" identifier="TypesSegue" id="tSu-As-UVB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -585,13 +586,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AdP-lF-zMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456.52173913043481" y="776.78571428571422"/>
+            <point key="canvasLocation" x="1472" y="777"/>
         </scene>
-        <!--Category-->
+        <!--Categories-->
         <scene sceneID="fZO-X2-ZpZ">
             <objects>
                 <navigationController id="YXR-nZ-2An" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Category" image="list.dash" catalog="system" id="fR3-sD-sjw"/>
+                    <tabBarItem key="tabBarItem" title="Categories" image="list.dash" catalog="system" id="fR3-sD-sjw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QeJ-68-Ci3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -602,7 +603,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X78-7z-7ud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-522" y="777"/>
+            <point key="canvasLocation" x="580" y="777"/>
         </scene>
         <!--Brands-->
         <scene sceneID="Rvf-os-Dw3">
@@ -622,6 +623,9 @@
             <point key="canvasLocation" x="581" y="72"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tSu-As-UVB"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="account_box_36pt" width="36" height="36"/>
         <image name="arrow_back_ios_36pt" width="36" height="36"/>
