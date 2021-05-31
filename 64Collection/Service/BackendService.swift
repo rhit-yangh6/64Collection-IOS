@@ -21,7 +21,7 @@ class BackendService {
     }
 
     func retrieveBrandsList(searchString: String, changeListener: (() -> Void)?) {
-        AF.request("http://139.196.98.81:8080/64collection/brand/list?keyword=\(searchString)").responseJSON { response in
+        AF.request("\(API_URL)64collection/brand/list?keyword=\(searchString)").responseJSON { response in
             switch response.result {
             case .success(let JSON):
                 self.brandList = [BrandDto]()
@@ -44,7 +44,7 @@ class BackendService {
     }
 
     func retrieveOneBrand(brandId: String, changeListener: (() -> Void)?) {
-        AF.request("http://139.196.98.81:8080/64collection/brand/info?brandId=\(brandId)").responseJSON { response in
+        AF.request("\(API_URL)64collection/brand/info?brandId=\(brandId)").responseJSON { response in
             switch response.result {
             case .success(let JSON):
                 let response = JSON as! NSDictionary
@@ -63,7 +63,7 @@ class BackendService {
     }
 
     func retrieveRandomType(changeListener: (() -> Void)?) {
-        AF.request("http://139.196.98.81:8080/64collection/type/random").responseJSON { response in
+        AF.request("\(API_URL)64collection/type/random").responseJSON { response in
             switch response.result {
             case .success(let JSON):
                 let response = JSON as! NSDictionary
@@ -86,7 +86,7 @@ class BackendService {
 
     func retrieveTypesListByBrand(searchString: String, brandId: String, changeListener: (() -> Void)?) {
 
-        AF.request("http://139.196.98.81:8080/64collection/type/brand_list?keyword=\(searchString)&brandId=\(brandId)").responseJSON { response in
+        AF.request("\(API_URL)64collection/type/brand_list?keyword=\(searchString)&brandId=\(brandId)").responseJSON { response in
             switch response.result {
             case .success(let JSON):
                 let response = JSON as! NSDictionary
@@ -112,8 +112,7 @@ class BackendService {
     }
 
     func retrieveTypesListByCategory(category: String, changeListener: (() -> Void)?) {
-
-        AF.request("http://139.196.98.81:8080/64collection/type/category_list?category=\(category)").responseJSON { response in
+        AF.request("\(API_URL)64collection/type/category_list?category=\(category)").responseJSON { response in
             switch response.result {
             case .success(let JSON):
                 let response = JSON as! NSDictionary

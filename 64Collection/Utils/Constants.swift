@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+let API_URL = "http://139.196.98.81:8080/"
+
 let kClassBrand = "Brand"
 let kKeyBrandName = "name"
 let kKeyBrandCountry = "country"
