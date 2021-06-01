@@ -11,7 +11,6 @@ import Alamofire
 class BackendService {
     var brandList: [BrandDto]?
     var typeList: [TypeDto]?
-    var categoryList: [CategoryDto]?
     var tempBrand: BrandDto?
     var tempType: TypeDto?
 
@@ -43,8 +42,8 @@ class BackendService {
         }
     }
 
-    func retrieveOneBrand(brandId: String, changeListener: (() -> Void)?) {
-        AF.request("\(API_URL)64collection/brand/info?brandId=\(brandId)").responseJSON { response in
+    func retrieveOneBrand(brandId: String, typeId: String, changeListener: (() -> Void)?) {
+        AF.request("\(API_URL)64collection/brand/info?brandId=\(brandId)&typeId=\(typeId)").responseJSON { response in
             switch response.result {
             case .success(let JSON):
                 let response = JSON as! NSDictionary
@@ -75,7 +74,8 @@ class BackendService {
                         diecastBrand: type["diecastBrand"] as! String,
                         category: type["category"]! as! String,
                         imgUrls: type["imgUrls"]! as! [String],
-                        brandId: type["brandId"]! as! String)
+                        brandId: type["brandId"]! as! String,
+                        viewTimes: type["viewTimes"]! as! Int)
                 changeListener?()
             case .failure(let error):
                 print("Request failed with error: \(error)")
@@ -99,7 +99,8 @@ class BackendService {
                             diecastBrand: type["diecastBrand"] as! String,
                             category: type["category"]! as! String,
                             imgUrls: type["imgUrls"]! as! [String],
-                            brandId: type["brandId"]! as! String)
+                            brandId: type["brandId"]! as! String,
+                            viewTimes: type["viewTimes"]! as! Int)
                     self.typeList?.append(typeDto)
                 }
                 changeListener?()
@@ -125,7 +126,8 @@ class BackendService {
                             diecastBrand: type["diecastBrand"] as! String,
                             category: type["category"]! as! String,
                             imgUrls: type["imgUrls"]! as! [String],
-                            brandId: type["brandId"]! as! String)
+                            brandId: type["brandId"]! as! String,
+                            viewTimes: type["viewTimes"]! as! Int)
                     self.typeList?.append(typeDto)
                 }
                 changeListener?()

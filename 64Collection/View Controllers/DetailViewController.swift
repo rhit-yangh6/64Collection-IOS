@@ -33,7 +33,7 @@ class DetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        BackendService.shared.retrieveOneBrand(brandId: typeDto!.brandId, changeListener: reloadData)
+        BackendService.shared.retrieveOneBrand(brandId: typeDto!.brandId, typeId: typeDto!.objectId, changeListener: reloadData)
     }
 
     func reloadData() {

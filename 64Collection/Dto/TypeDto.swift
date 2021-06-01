@@ -15,8 +15,9 @@ class TypeDto {
     var diecastBrand: String
     var make: Int
     var brandId: String
+    var viewTimes: Int
     
-    public init (objectId: String, name: String, make: Int, diecastBrand: String, category: String, imgUrls: [String], brandId: String) {
+    public init (objectId: String, name: String, make: Int, diecastBrand: String, category: String, imgUrls: [String], brandId: String, viewTimes: Int) {
         self.objectId = objectId
         self.name = name
         self.make = make
@@ -24,5 +25,6 @@ class TypeDto {
         self.category = category
         self.imgUrls = imgUrls
         self.brandId = brandId
+        self.viewTimes = viewTimes
     }
 }
