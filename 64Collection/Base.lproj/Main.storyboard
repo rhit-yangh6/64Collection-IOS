@@ -213,7 +213,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9G8-bo-G8k">
-                                <rect key="frame" x="20" y="628" width="374" height="61"/>
+                                <rect key="frame" x="20" y="628" width="374" height="101.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOl-7M-1ZX">
                                         <rect key="frame" x="152" y="0.0" width="70" height="20.5"/>
@@ -223,6 +223,12 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DiecastBrand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hct-1k-k89">
                                         <rect key="frame" x="136" y="40.5" width="102.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlS-Ts-Fqv">
+                                        <rect key="frame" x="143.5" y="81" width="87.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -290,6 +296,7 @@
                         <outlet property="typeDiecastBrandLabel" destination="hct-1k-k89" id="kQT-qK-nO7"/>
                         <outlet property="typeMakeLabel" destination="0TS-Vd-13w" id="eqm-oN-2Pt"/>
                         <outlet property="typeNameLabel" destination="iyd-LC-M9F" id="7GN-4c-H68"/>
+                        <outlet property="typeViewCountLabel" destination="rlS-Ts-Fqv" id="fTt-ao-ceV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEv-JZ-tX4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
