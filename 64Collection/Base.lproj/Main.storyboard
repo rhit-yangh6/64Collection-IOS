@@ -16,8 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="linkColor"/>
                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="1472.4637681159422" y="71.651785714285708"/>
         </scene>
-        <!--Type Table View Controller-->
+        <!--Brand Type Table View Controller-->
         <scene sceneID="eGN-sz-unL">
             <objects>
                 <tableViewController id="bAa-RB-xy7" customClass="BrandTypeTableViewController" customModule="_4Collection" customModuleProvider="target" sceneMemberID="viewController">
@@ -558,7 +557,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="83i-B6-d90" customClass="CategoryCell" customModule="_4Collection" customModuleProvider="target">
@@ -597,7 +595,7 @@
                                 <connections>
                                     <outlet property="categoryImageView" destination="90X-YR-IoK" id="LvU-Mg-QyU"/>
                                     <outlet property="categoryLabel" destination="7Nt-IX-SmF" id="ryw-4e-TKi"/>
-                                    <segue destination="bAa-RB-xy7" kind="show" identifier="TypesSegue" id="tSu-As-UVB"/>
+                                    <segue destination="7MB-Xc-4LF" kind="show" identifier="TypesSegue" id="YQM-uI-IeK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -611,6 +609,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AdP-lF-zMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1472" y="777"/>
+        </scene>
+        <!--Category Type Table View Controller-->
+        <scene sceneID="yRd-a6-4F2">
+            <objects>
+                <tableViewController id="7MB-Xc-4LF" customClass="CategoryTypeTableViewController" customModule="_4Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rMH-6Z-jsO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTypeCell" id="yLR-hi-6jQ">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yLR-hi-6jQ" id="NdV-9V-CEt">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7MB-Xc-4LF" id="OuZ-mS-jNL"/>
+                            <outlet property="delegate" destination="7MB-Xc-4LF" id="zQw-FA-jGO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ywS-Do-1pe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Caa-KM-EQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2348" y="777"/>
         </scene>
         <!--Categories-->
         <scene sceneID="fZO-X2-ZpZ">
@@ -724,7 +752,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="O2q-ko-k5A"/>
-        <segue reference="ef3-Ua-Wkf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="account_box_36pt" width="36" height="36"/>
@@ -733,6 +760,9 @@
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="questionmark.square" catalog="system" width="128" height="114"/>
         <image name="random" width="512" height="512"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

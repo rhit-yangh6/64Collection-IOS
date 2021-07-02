@@ -129,8 +129,8 @@
 				84CAFAEA26352A1000AD51BD /* ImageDetailViewController.swift */,
 				84CAFAF326352E7700AD51BD /* DetailViewController.swift */,
 				849C4DAC2660B42D004EFEC1 /* CategoryTableViewController.swift */,
-				849C4DAF2660ECFE004EFEC1 /* RandomPageViewController.swift */,
 				586035682FA84D0DE932A881 /* CategoryTypeTableViewController.swift */,
+				849C4DAF2660ECFE004EFEC1 /* RandomPageViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

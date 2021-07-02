@@ -168,6 +168,10 @@ class BackendService {
         (typeList?[index])!
     }
 
+    func getBrandTypesCount() -> Int {
+        brandTypeList?.count ?? 0
+    }
+
     func getBrandTypeAtIndex(index: Int) -> BrandTypeDto {
         (brandTypeList?[index])!
     }

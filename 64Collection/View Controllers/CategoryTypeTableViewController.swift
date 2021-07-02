@@ -27,11 +27,11 @@ class CategoryTypeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        BackendService.shared.brandTypeList!.count
+        BackendService.shared.getBrandTypesCount()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: typeCellIdentifier, for: indexPath) as! TypeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: categoryTypeCellIdentifier, for: indexPath)
 //        let typeDto = BackendService.shared.getTypeAtIndex(index: indexPath.row)
 //        cell.typeNameLabel?.text = typeDto.name
 //        cell.typeMakeLabel?.text = String(typeDto.make)
