@@ -60,8 +60,7 @@ class BrandTableViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == typesSegueIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
-                (segue.destination as! TypeTableViewController).isByBrand = true
-                (segue.destination as! TypeTableViewController).brandId = 
+                (segue.destination as! BrandTypeTableViewController).brandId =
                         BackendService.shared.getBrandAtIndex(index: indexPath.row).brandId
             }
         }

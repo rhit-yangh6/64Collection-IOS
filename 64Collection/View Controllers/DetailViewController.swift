@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var typeCategoryLabel: UILabel!
     @IBOutlet weak var typeDiecastBrandLabel: UILabel!
     @IBOutlet weak var typeViewCountLabel: UILabel!
-    var typeDto: TypeDto?
+    var typeId: String?
 //    let dataSource = [
 //    "https://i.pinimg.com/originals/7f/7f/36/7f7f36313d5f03175087a828dce5982d.jpg", "https://static1.srcdn.com/wordpress/wp-content/uploads/2021/03/Among-Us-Random-Name-Generator.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5"
 //    ]
@@ -26,25 +26,25 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // print(typeDto!.imgUrls)
-        if typeDto!.imgUrls.isEmpty {
-            return
-        }
-        configurePageViewController()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        BackendService.shared.retrieveOneBrand(brandId: typeDto!.brandId, typeId: typeDto!.objectId, changeListener: reloadData)
+        BackendService.shared.retrieveOneType(typeId: typeId!, changeListener: reloadData)
     }
 
     func reloadData() {
-        brandNameLabel.text = BackendService.shared.getTmpBrand().name
-        ImageUtils.shared.load(imageView: brandLogoImageView, from: BackendService.shared.getTmpBrand().imgUrl)
-        typeNameLabel.text = typeDto?.name ?? "*TypeName*"
-        typeMakeLabel.text = String(typeDto!.make)
-        typeCategoryLabel.text = "Category: \(typeDto!.category)"
-        typeDiecastBrandLabel.text = "Diecast Brand: \(typeDto!.diecastBrand)"
-        typeViewCountLabel.text = "Viewed \(typeDto!.viewTimes) times"
+        brandNameLabel.text = BackendService.shared.tempBrandType?.brandName
+        ImageUtils.shared.load(imageView: brandLogoImageView, from: BackendService.shared.tempBrandType!.iconUrl)
+        typeNameLabel.text = BackendService.shared.tempBrandType!.typeName ?? "*TypeName*"
+        typeMakeLabel.text = String(BackendService.shared.tempBrandType!.make)
+        typeCategoryLabel.text = "Category: \(BackendService.shared.tempBrandType!.category)"
+        typeDiecastBrandLabel.text = "Diecast Brand: \(BackendService.shared.tempBrandType!.diecastBrand)"
+        typeViewCountLabel.text = "Viewed \(BackendService.shared.tempBrandType!.viewTimes) times"
+        if BackendService.shared.tempBrandType!.imgUrls.isEmpty {
+            return
+        }
+        configurePageViewController()
     }
 
     func configurePageViewController() {
@@ -87,14 +87,14 @@ class DetailViewController: UIViewController {
     }
 
     func detailViewControllerAt(index: Int) -> ImageDetailViewController? {
-        if index >= typeDto!.imgUrls.count || typeDto!.imgUrls.count == 0 {
+        if index >= BackendService.shared.tempBrandType!.imgUrls.count || BackendService.shared.tempBrandType!.imgUrls.count == 0 {
             return nil
         }
         guard let imageDetailViewController = storyboard?.instantiateViewController(identifier: String(describing: ImageDetailViewController.self)) as? ImageDetailViewController else {
             return nil
         }
         imageDetailViewController.index = index
-        imageDetailViewController.imgUrl = typeDto!.imgUrls[index]
+        imageDetailViewController.imgUrl = BackendService.shared.tempBrandType!.imgUrls[index]
         return imageDetailViewController
     }
 }
@@ -105,7 +105,7 @@ extension DetailViewController: UIPageViewControllerDelegate, UIPageViewControll
     }
 
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        typeDto!.imgUrls.count
+        BackendService.shared.tempBrandType!.imgUrls.count
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -127,7 +127,7 @@ extension DetailViewController: UIPageViewControllerDelegate, UIPageViewControll
         guard var currentIndex = imageDetailViewController.index else {
             return nil
         }
-        if currentIndex == typeDto!.imgUrls.count {
+        if currentIndex == BackendService.shared.tempBrandType!.imgUrls.count {
             return nil
         }
         currentIndex += 1

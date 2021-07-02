@@ -1,5 +1,5 @@
 //
-//  TypeTableViewController.swift
+//  BrandTypeTableViewController.swift
 //  64Collection
 //
 //  Created by Hanyu Yang on 2021/2/7.
@@ -7,11 +7,9 @@
 
 import UIKit
 
-class TypeTableViewController: UITableViewController, UISearchBarDelegate {
+class BrandTypeTableViewController: UITableViewController, UISearchBarDelegate {
 
     var brandId: String!
-    var categoryString: String!
-    var isByBrand: Bool!
     @IBOutlet weak var typeSearchBar: UISearchBar!
 
     override func viewDidLoad() {
@@ -29,13 +27,9 @@ class TypeTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     @objc func refresh() {
-        if isByBrand {
-            BackendService.shared.retrieveTypesListByBrand(searchString: self.typeSearchBar.text ?? "",
-                    brandId: brandId,
-                    changeListener: tableView.reloadData)
-        } else {
-            BackendService.shared.retrieveTypesListByCategory(category: categoryString, changeListener: tableView.reloadData)
-        }
+        BackendService.shared.retrieveTypesListByBrand(searchString: self.typeSearchBar.text ?? "",
+                brandId: brandId,
+                changeListener: tableView.reloadData)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,14 +52,14 @@ class TypeTableViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == typeDetailSegueIdentifier {
             if let indexPath = tableView.indexPathForSelectedRow {
-                (segue.destination as! DetailViewController).typeDto =
-                        BackendService.shared.getTypeAtIndex(index: indexPath.row)
+                (segue.destination as! DetailViewController).typeId =
+                        BackendService.shared.getTypeAtIndex(index: indexPath.row).objectId
             }
         }
     }
 
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.refresh()
+        refresh()
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

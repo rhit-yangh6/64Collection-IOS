@@ -9,9 +9,9 @@ import UIKit
 
 class TypeSideBarViewController: UIViewController {
     
-    var tableViewController: TypeTableViewController {
+    var tableViewController: BrandTypeTableViewController {
         let navController = presentingViewController as! UINavigationController
-        return navController.viewControllers.last as! TypeTableViewController
+        return navController.viewControllers.last as! BrandTypeTableViewController
     }
     
     @IBAction func pressedBackToBrandsButton(_ sender: Any) {

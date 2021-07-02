@@ -20,8 +20,8 @@ class RandomPageViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == typeDetailSegueIdentifier {
-            (segue.destination as! DetailViewController).typeDto =
-                    BackendService.shared.tempType
+            (segue.destination as! DetailViewController).typeId =
+                    BackendService.shared.tempType!.objectId
         }
     }
 }

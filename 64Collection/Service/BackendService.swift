@@ -11,8 +11,9 @@ import Alamofire
 class BackendService {
     var brandList: [BrandDto]?
     var typeList: [TypeDto]?
-    var tempBrand: BrandDto?
+    var brandTypeList: [BrandTypeDto]?
     var tempType: TypeDto?
+    var tempBrandType: BrandTypeDto?
 
     static let shared = BackendService()
 
@@ -42,17 +43,25 @@ class BackendService {
         }
     }
 
-    func retrieveOneBrand(brandId: String, typeId: String, changeListener: (() -> Void)?) {
-        AF.request("\(API_URL)64collection/brand/info?brandId=\(brandId)&typeId=\(typeId)").responseJSON { response in
+    func retrieveOneType(typeId: String, changeListener: (() -> Void)?) {
+        AF.request("\(API_URL)64collection/type/info?typeId=\(typeId)").responseJSON { response in
             switch response.result {
             case .success(let JSON):
                 let response = JSON as! NSDictionary
 
-                let brand = response.object(forKey: "data")! as! NSDictionary
-                    self.tempBrand = BrandDto(id: brand["id"]! as! String,
-                            name: brand["name"]! as! String,
-                            imgUrl: brand["iconUrl"]! as! String,
-                            country: brand["country"]! as! String)
+                let brandType = response.object(forKey: "data")! as! NSDictionary
+                self.tempBrandType = BrandTypeDto(
+                        brandId: brandType["brandId"]! as! String,
+                        brandName: brandType["brandName"]! as! String,
+                        iconUrl: brandType["iconUrl"]! as! String,
+                        country: brandType["country"]! as! String,
+                        typeId: brandType["typeId"]! as! String,
+                        typeName: brandType["typeName"]! as! String,
+                        imgUrls: brandType["imgUrls"]! as! [String],
+                        category: brandType["category"]! as! String,
+                        diecastBrand: brandType["diecastBrand"] as! String,
+                        make: brandType["make"]! as! Int,
+                        viewTimes: brandType["viewTimes"]! as! Int)
                 changeListener?()
             case .failure(let error):
                 print("Request failed with error: \(error)")
@@ -117,22 +126,26 @@ class BackendService {
             switch response.result {
             case .success(let JSON):
                 let response = JSON as! NSDictionary
-                self.typeList = [TypeDto]()
-                for type in response.object(forKey: "data")! as! NSArray {
-                    let type = type as! NSDictionary
-                    let typeDto = TypeDto(objectId: type["id"]! as! String,
-                            name: type["name"]! as! String,
-                            make: type["make"]! as! Int,
-                            diecastBrand: type["diecastBrand"] as! String,
-                            category: type["category"]! as! String,
-                            imgUrls: type["imgUrls"]! as! [String],
-                            brandId: type["brandId"]! as! String,
-                            viewTimes: type["viewTimes"]! as! Int)
-                    self.typeList?.append(typeDto)
+                self.brandTypeList = [BrandTypeDto]()
+                for brandType in response.object(forKey: "data")! as! NSArray {
+                    let brandType = brandType as! NSDictionary
+                    let brandTypeDto = BrandTypeDto(
+                            brandId: brandType["brandId"]! as! String,
+                            brandName: brandType["brandName"]! as! String,
+                            iconUrl: brandType["iconUrl"]! as! String,
+                            country: brandType["country"]! as! String,
+                            typeId: brandType["typeId"]! as! String,
+                            typeName: brandType["typeName"]! as! String,
+                            imgUrls: brandType["imgUrls"]! as! [String],
+                            category: brandType["category"]! as! String,
+                            diecastBrand: brandType["diecastBrand"] as! String,
+                            make: brandType["make"]! as! Int,
+                            viewTimes: brandType["viewTimes"]! as! Int)
+                    self.brandTypeList?.append(brandTypeDto)
                 }
                 changeListener?()
             case .failure(let error):
-                self.typeList = [TypeDto]()
+                self.brandTypeList = [BrandTypeDto]()
                 print("Request failed with error: \(error)")
                 changeListener?()
             }
@@ -155,13 +168,13 @@ class BackendService {
         (typeList?[index])!
     }
 
+    func getBrandTypeAtIndex(index: Int) -> BrandTypeDto {
+        (brandTypeList?[index])!
+    }
+
     func clearCache() {
         brandList = []
         typeList = []
-    }
-
-    func getTmpBrand() -> BrandDto {
-        tempBrand!
     }
 
 }
