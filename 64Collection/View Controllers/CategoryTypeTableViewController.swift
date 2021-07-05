@@ -31,7 +31,13 @@ class CategoryTypeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: categoryTypeCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: categoryTypeCellIdentifier, for: indexPath) as! CategoryTypeCell
+        let brandType = BackendService.shared.getBrandTypeAtIndex(index: indexPath.row)
+        cell.brandNameLabel.text = brandType.brandName
+        cell.typeNameMakeLabel.text = "\(brandType.typeName) - \(brandType.make)"
+        ImageUtils.shared.load(imageView: cell.brandImage, from: brandType.iconUrl)
+//        cell.textLabel?.text = brandType.brandName
+//        cell.detailTextLabel?.text = brandType.typeName
 //        let typeDto = BackendService.shared.getTypeAtIndex(index: indexPath.row)
 //        cell.typeNameLabel?.text = typeDto.name
 //        cell.typeMakeLabel?.text = String(typeDto.make)
@@ -51,4 +57,10 @@ class CategoryTypeTableViewController: UITableViewController {
             }
         }
     }
+}
+
+class CategoryTypeCell: UITableViewCell {
+    @IBOutlet weak var brandNameLabel: UILabel!
+    @IBOutlet weak var typeNameMakeLabel: UILabel!
+    @IBOutlet weak var brandImage: UIImageView!
 }
