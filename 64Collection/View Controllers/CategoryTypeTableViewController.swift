@@ -14,7 +14,6 @@ class CategoryTypeTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
                 target: self,
                 action: #selector(refresh))
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -36,12 +35,6 @@ class CategoryTypeTableViewController: UITableViewController {
         cell.brandNameLabel.text = brandType.brandName
         cell.typeNameMakeLabel.text = "\(brandType.typeName) - \(brandType.make)"
         ImageUtils.shared.load(imageView: cell.brandImage, from: brandType.iconUrl)
-//        cell.textLabel?.text = brandType.brandName
-//        cell.detailTextLabel?.text = brandType.typeName
-//        let typeDto = BackendService.shared.getTypeAtIndex(index: indexPath.row)
-//        cell.typeNameLabel?.text = typeDto.name
-//        cell.typeMakeLabel?.text = String(typeDto.make)
-//        cell.typeCategoryImage.image = CategoryIconMap[typeDto.category] as? UIImage ?? UIImage(named: "unclassified")
         return cell
     }
 
