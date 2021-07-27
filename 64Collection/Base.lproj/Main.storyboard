@@ -627,17 +627,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="3q2-Gt-p79">
-                                            <rect key="frame" x="12" y="2" width="371" height="40"/>
+                                            <rect key="frame" x="12" y="1.5" width="371" height="41"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="22s-kf-lN1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.5" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="9UM-We-9az"/>
                                                         <constraint firstAttribute="width" secondItem="22s-kf-lN1" secondAttribute="height" multiplier="1:1" id="Hcf-Fj-ADK"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fk5-sZ-4Fn">
-                                                    <rect key="frame" x="61" y="1" width="310" height="38.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fk5-sZ-4Fn">
+                                                    <rect key="frame" x="61" y="0.0" width="310" height="41"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teT-aQ-ZPr">
                                                             <rect key="frame" x="0.0" y="0.0" width="310" height="20.5"/>
@@ -646,7 +646,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgK-M8-2oo">
-                                                            <rect key="frame" x="0.0" y="20.5" width="310" height="18"/>
+                                                            <rect key="frame" x="0.0" y="20.5" width="310" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
